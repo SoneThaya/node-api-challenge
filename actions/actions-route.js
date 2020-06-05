@@ -50,7 +50,7 @@ router.delete('/:id', (req, res) => {
       if (action) {
         res.status(200).json({message: "action deleted"})
       } else {
-        res.status(404).json({message: "did not find action"})
+        res.status(404).json({message: "did not find that id"})
       }
     })
     .catch(err => {
