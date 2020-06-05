@@ -40,13 +40,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express is a web application framework that sits on top of the Node.js web server (http server module). It’s like React, for your backend.
+Express sits on top of the raw http server module provided by Node.js and adds extra functionality, like routing and middleware support, and a simpler API.
+Middleware functions can get the request and response objects, operate on them, and (when specified) trigger some action. Examples are logging or security.
+Express’ middleware stack is basically an array of functions.
+
+
 - [ ] Describe Middleware?
+
+Middleware provide a way to extend the features provided by the Express framework. Tasks like authentication and logging are commonly handled by middleware. Another benefit of Middleware is that it provides an easy way to add modularity to our code.
 
 - [ ] Describe a Resource?
 
+A principle  to keep in mind when designing a RESTful web api is everything is a resource. Each resource is accessible via a unique URI. Resources can have multiple representations. Management of resources is done via HTTP methods.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+A status code and message.
+
 - [ ] How can we partition our application into sub-applications?
+
+Express Routers are a way to split an application into sub-applications to make it more modular and easier to maintain.
 
 ## Minimum Viable Product
 
