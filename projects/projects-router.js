@@ -29,7 +29,19 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// needs work not posting 
+// its working i guess
+router.get('/:id/actions', (req, res) => {
+  Projects.getProjectActions(req.params.id)
+    .then(project => {
+      res.status(200).json(project)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({message: 'error doing that'})
+    })
+})
+
+// this is posting !!!!!!
 router.post('/', (req, res) => {
   Projects.insert(req.body)
     .then(project => {
@@ -42,6 +54,7 @@ router.post('/', (req, res) => {
     })
 })
 
+// this is deleting !!!
 router.delete('/:id', (req, res) => {
   Projects.remove(req.params.id)
     .then(project => {
@@ -59,6 +72,7 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// this is updating!!!
 router.put('/:id', (req, res) => {
   Projects.update(req.params.id, req.body)
     .then(project => {
